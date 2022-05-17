@@ -16,11 +16,16 @@ function listCheck() {
     let listLength = grabList.length;
     let lastListItem = grabList[listLength - 1];
 
-    // input.value.toLowerCase() === listItem.toLowerCase() ||
-    if (input.value.toLowerCase() === lastListItem.innerHTML.toLowerCase() ||
-    input.value.length < 1) {
-      return false;
+    console.log(grabList);
+    for (let key of grabList) {
+      console.log(key.innerText);
+      if (input.value.toLowerCase() === key.innerText || 
+      input.value.toLowerCase() === lastListItem.innerHTML.toLowerCase() ||
+      input.value.length < 1) {
+        return false;
+      }
     }
+
   }
   return true;
 }
