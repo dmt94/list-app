@@ -1,3 +1,54 @@
+// let button = document.getElementById("enter");
+// let input = document.getElementById("userinput");
+// let lists = document.querySelectorAll("li");
+// let ul = document.querySelector("ul");
+
+// console.log(ul.children);
+
+// function inputLength() {
+//   return input.value.length;
+// }
+
+// function listCheck() {
+//   let userListInput = input.value;
+//   let groceryList = ul.children;
+
+//   for (let i = 0; i < groceryList.length; i++) {
+//     console.log(groceryList[i].innerHTML);
+//     if (groceryList[i].innerHTML.toLowerCase() === userListInput.toLowerCase()) {
+//       alert("Item is already on the list.");
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// function createListElement() {
+//   let li = document.createElement("li");
+//   li.appendChild(document.createTextNode(input.value));
+//   ul.appendChild(li);
+//   input.value = "";
+// }
+
+// function addListAfterClick() {
+//   if (inputLength() > 0 && listCheck() === true) {
+//     createListElement();
+//     console.log(lists);
+//   }
+// }
+
+// function addListAfterKeyPress(event) {
+//   if (inputLength() > 0 && event.keyCode === 13 && listCheck() === true) {
+//     createListElement();
+//     console.log(lists);
+//   }
+// }
+
+// button.addEventListener("click", addListAfterClick);
+
+// input.addEventListener("keypress", addListAfterKeyPress);
+
+
 //second version
 
 let button = document.getElementById("enter");
@@ -18,10 +69,7 @@ let lastListItem = grabList[listLength - 1];
 function listCheck() {
   for (let key of listItemDiv) {
     let listItem = key.children[0].innerHTML;
-    // list inside div
-    let grabList = document.querySelectorAll(".list-bullet");
-    let listLength = grabList.length;
-    let lastListItem = grabList[listLength - 1];
+
 
     if (input.value.toLowerCase() === listItem.toLowerCase() || 
     input.value.toLowerCase() === lastListItem.innerHTML.toLowerCase() ||
@@ -29,7 +77,6 @@ function listCheck() {
       return false;
     }
   }
-  console.log(lastListItem);
   return true;
 }
 
@@ -62,24 +109,5 @@ function noRepeat() {
     return addDivAfterClick();
   }
 }
+
 button.addEventListener("click", noRepeat);
-button.addEventListener("click", removeDiv);
-
-removeDiv();
-
-
-
-function removeDiv() {
-  let divElement = document.querySelectorAll('.list-item');
-  for (let key of divElement) {
-    let listButton = key.children[1];
-    listButton.addEventListener("click", remove);
-
-    function remove() {
-      key.remove();
-    }
-  }
-}
-
-
-
