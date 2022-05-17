@@ -1,18 +1,61 @@
-.coolTitle {
+/* utlity */
+
+body {
+  background-color: rgb(92, 92, 92);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 80%;
+  border-radius: 15px;
+  margin-top: 30px;
+  /* border: 1px solid rgb(239, 213, 182); */
+}
+
+.container, .grocery-list-container {
+  background-color: rgb(35, 33, 33);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grocery-list-container {
+  background-color: rgb(255, 255, 254);
+  border-radius: 15px;
+  margin: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+
+* {
+  color: rgb(253, 255, 244);
+  ;
+}
+
+/* title */
+
+.title {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 3rem;
   text-align: center;
-  font-family: 'Oswald', Helvetica, sans-serif;
-  font-size: 40px;
-  transform: skewY(-10deg);
-  letter-spacing: 4px;
-  word-spacing: -8px;
-  color: tomato;
-  text-shadow:
-    -1px -1px 0 firebrick,
-    -2px -2px 0 firebrick,
-    -3px -3px 0 firebrick,
-    -4px -4px 0 firebrick,
-    -5px -5px 0 firebrick,
-    -30px 20px 40px dimgrey;
+  margin-bottom: 10px;
+}
+
+#first {
+  font-size: 20px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 800;
+  color:rgb(248, 111, 47);
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .done {
@@ -20,32 +63,37 @@
 }
 
 .input {
-  border: 2px solid rgb(104, 163, 48);
+  border: 1px solid rgb(255, 255, 255);
   color: rgb(89, 122, 89);
   border-radius: 5px;
   height: 20px;
-  margin: 2px;
+  margin: 10px;
+  font-size: 20px;
+  padding: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
 }
 
 button {
-  background-color: rgba(163, 251, 139, 0.911);
+  background-color: rgba(76, 123, 90, 0.911);
   border-radius: 5px;
   width: 60px;
   height: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.765);
+  border: none;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
-  font-weight: 400;
-  color: rgb(66, 71, 72);
+  font-weight: 800;
+  color: rgb(251, 254, 255);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 button:active {
-  border: 2px solid rgb(131, 214, 53);
+  border: 2px solid rgb(248, 205, 47);
 }
 
 button:hover {
-  background-color: rgb(179, 255, 80);
+  background-color: rgb(221, 230, 135);
   cursor: pointer;
+  color:rgb(72, 70, 70);
 }
 
 /* list items */
@@ -53,33 +101,35 @@ button:hover {
 .list-item {
   display: flex;
   align-items: center;
-  margin: 10px;
+  margin: 20px;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .list-bullet {
   list-style-type: square;
-  color:rgb(89, 86, 113);
-  font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  /* text-transform: uppercase; */
+  color:rgb(54, 53, 58);
+  font-weight: 800;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .list-bullet:hover {
   cursor: pointer;
-  color:rgb(100, 126, 241);
+  color:rgb(108, 174, 97);
 }
 
 .remove {
   margin: 5px;
   width: 25px;
   text-align: center;
-  background-color: rgb(211, 192, 249);
-  color: white;
-  border: none;
+  background-color: rgb(237, 236, 220);
+  color: rgb(98, 95, 95);
   font-weight: 900;
 }
 
 .remove:hover {
-  background-color: rgb(100, 126, 241);
+  background-color: #3d3d3d;
+  color: rgb(255, 249, 243);
 }

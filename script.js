@@ -7,11 +7,8 @@ let input = document.getElementById("userinput");
 let lists = document.querySelectorAll("li");
 let ul = document.querySelector("ul");
 
-button.addEventListener("click", noRepeat);
-button.addEventListener("click", removeDiv);
+let listBulletItems = document.querySelectorAll(".list-bullet");
 
-removeDiv();
-done();
 
 function listCheck() {
 
@@ -20,7 +17,7 @@ function listCheck() {
   let lastListItem = grabList[listLength - 1];
 
   for (let key of grabList) {
-    console.log(key.innerText);
+    // console.log(key.innerText);
     if (input.value.toLowerCase() === key.innerText || 
     input.value.toLowerCase() === lastListItem.innerHTML.toLowerCase() ||
     input.value.length < 1) {
@@ -29,6 +26,8 @@ function listCheck() {
   }
   return true;
 }
+
+
 
 let createListDiv;
 function addDivAfterClick() {
@@ -72,9 +71,17 @@ function removeDiv() {
   }
 }
 
+button.addEventListener("click", noRepeat);
+button.addEventListener("click", removeDiv);
+ul.addEventListener("click", done);
+
+removeDiv();
+
 function done() {
-  let listBulletItems = document.querySelectorAll(".list-bullet");
-  for (let key of listBulletItems) {
+  let grabList = document.querySelectorAll(".list-bullet");
+
+  for (let key of grabList) {
+    console.log(key);
     key.addEventListener("click", cross);
 
     function cross() {
@@ -82,5 +89,3 @@ function done() {
     }
   }
 }
-
-

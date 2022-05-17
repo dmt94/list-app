@@ -6,42 +6,54 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS + DOM Lesson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Days+One&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Uncial+Antiqua&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>Shopping List</h1>
-  <h1>Bday Shopping</h1>
-  <p id="first">Get it done today</p>
-  <input id="userinput" class="input" type="text" placeholder="Enter items">
-  <button id="enter">Add</button>
-  <ul id="groceryList">
-    <div class="list-item">
-      <li class="list-bullet" random="23">Gift Wrap</li>
-      <button class="remove">X</button>
+  <div class="container">
+    <h1 class="title">Shopping List</h1>
+    <p id="first">Eat Well</p>
+    <div class="input-container">
+      <input id="userinput" class="input" type="text" placeholder="Enter items">
+      <button id="enter">Add</button>
     </div>
-    <div class="list-item">
-      <li class="list-bullet">Spinach</li>
-      <button class="remove">X</button>
-    </div>
-    <div class="list-item">
-      <li class="list-bullet">Rice</li>
-      <button class="remove">X</button>
-    </div>
-    <div class="list-item">
-      <li class="list-bullet">Birthday Cake</li>
-      <button class="remove">X</button>
-    </div>
-    <div class="list-item">
-      <li class="list-bullet">Candles</li>
-      <button class="remove">X</button>
-    </div>
-   
-  </ul>
 
+    <div class="grocery-list-container">
+      <ul id="groceryList">
+        <div class="list-item">
+          <li class="list-bullet" random="23">Protein</li>
+          <button class="remove">X</button>
+        </div>
+        <div class="list-item">
+          <li class="list-bullet">Grains</li>
+          <button class="remove">X</button>
+        </div>
+        <div class="list-item">
+          <li class="list-bullet">Fruits</li>
+          <button class="remove">X</button>
+        </div>
+        <div class="list-item">
+          <li class="list-bullet">Vegetables</li>
+          <button class="remove">X</button>
+        </div>
+        <div class="list-item">
+          <li class="list-bullet">Legumes</li>
+          <button class="remove">X</button>
+        </div>
+      </ul>
+
+    </div>
+
+  </div>
   <!-- JavaScript file -->
   <script type="text/javascript" src="script.js"></script>
-  <!-- <script type="text/javascript" src="newscript.js"></script> -->
 </body>
 
 </html>
