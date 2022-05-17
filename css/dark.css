@@ -4,6 +4,8 @@ body {
   display: flex;
   justify-content: center;
   background: url('/images/blur-planet.png') no-repeat fixed center/cover;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -19,8 +21,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-
 }
 
 .container {
@@ -265,3 +265,14 @@ input:checked + .slider:before {
   color:rgb(121, 97, 174);
 }
 
+/* footer */
+
+footer {
+  background: none;
+  margin-top: 50px;
+}
+
+footer > span#first {
+  color:#454ab2;
+  text-decoration: overline;
+}

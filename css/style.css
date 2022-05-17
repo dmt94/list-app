@@ -4,6 +4,8 @@ body {
   display: flex;
   justify-content: center;
   background: url('/images/bg-img.JPG') no-repeat fixed center/cover;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -13,7 +15,7 @@ body {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-.container, .grocery-list-container {
+.container, .grocery-list-container, footer {
   background-color: rgb(35, 33, 33);
   display: flex;
   justify-content: center;
@@ -261,5 +263,15 @@ input:checked + .slider:before {
   color:rgb(108, 174, 97);
 }
 
-/* animation */
+/* footer */
 
+footer {
+  background: none;
+  margin-top: 50px;
+  width: 88%;
+}
+
+footer > span#first {
+  color:#3f3a3a;
+  text-decoration: overline;
+}
