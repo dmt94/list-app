@@ -1,7 +1,5 @@
 //second version
 
-
-
 let button = document.getElementById("enter");
 let input = document.getElementById("userinput");
 let lists = document.querySelectorAll("li");
