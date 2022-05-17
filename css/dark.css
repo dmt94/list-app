@@ -3,8 +3,7 @@
 body {  
   display: flex;
   justify-content: center;
-  background: url('/images/planet.jpg') no-repeat center center/cover;
-  
+  background: url('/images/blur-planet.png') no-repeat fixed center/cover;
 }
 
 .container {
@@ -23,7 +22,7 @@ body {
 
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(40, 40, 40, 0.608);
+  background-color: rgba(40, 40, 40, 0.675);
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
 }
