@@ -7,13 +7,6 @@ let ul = document.querySelector("ul");
 
 // div - list item
 let listItemDiv = document.querySelectorAll(".list-item");
-let listItemDivLength = document.querySelectorAll('.list-item').length;
-
-// list inside div
-let grabList = document.querySelectorAll(".list-bullet");
-let listLength = grabList.length;
-let lastListItem = grabList[listLength - 1];
-
 
 function listCheck() {
   for (let key of listItemDiv) {
@@ -23,13 +16,12 @@ function listCheck() {
     let listLength = grabList.length;
     let lastListItem = grabList[listLength - 1];
 
-    if (input.value.toLowerCase() === listItem.toLowerCase() || 
-    input.value.toLowerCase() === lastListItem.innerHTML.toLowerCase() ||
+    // input.value.toLowerCase() === listItem.toLowerCase() ||
+    if (input.value.toLowerCase() === lastListItem.innerHTML.toLowerCase() ||
     input.value.length < 1) {
       return false;
     }
   }
-  console.log(lastListItem);
   return true;
 }
 
@@ -66,8 +58,6 @@ button.addEventListener("click", noRepeat);
 button.addEventListener("click", removeDiv);
 
 removeDiv();
-
-
 
 function removeDiv() {
   let divElement = document.querySelectorAll('.list-item');
