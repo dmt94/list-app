@@ -1,31 +1,31 @@
 //second version
 
+
+
 let button = document.getElementById("enter");
 let input = document.getElementById("userinput");
 let lists = document.querySelectorAll("li");
 let ul = document.querySelector("ul");
 
-// div - list item
-let listItemDiv = document.querySelectorAll(".list-item");
+button.addEventListener("click", noRepeat);
+button.addEventListener("click", removeDiv);
+
+removeDiv();
+done();
 
 function listCheck() {
-  for (let key of listItemDiv) {
-    let listItem = key.children[0].innerHTML;
-    // list inside div
-    let grabList = document.querySelectorAll(".list-bullet");
-    let listLength = grabList.length;
-    let lastListItem = grabList[listLength - 1];
 
-    console.log(grabList);
-    for (let key of grabList) {
-      console.log(key.innerText);
-      if (input.value.toLowerCase() === key.innerText || 
-      input.value.toLowerCase() === lastListItem.innerHTML.toLowerCase() ||
-      input.value.length < 1) {
-        return false;
-      }
+  let grabList = document.querySelectorAll(".list-bullet");
+  let listLength = grabList.length;
+  let lastListItem = grabList[listLength - 1];
+
+  for (let key of grabList) {
+    console.log(key.innerText);
+    if (input.value.toLowerCase() === key.innerText || 
+    input.value.toLowerCase() === lastListItem.innerHTML.toLowerCase() ||
+    input.value.length < 1) {
+      return false;
     }
-
   }
   return true;
 }
@@ -59,10 +59,6 @@ function noRepeat() {
     return addDivAfterClick();
   }
 }
-button.addEventListener("click", noRepeat);
-button.addEventListener("click", removeDiv);
-
-removeDiv();
 
 function removeDiv() {
   let divElement = document.querySelectorAll('.list-item');
@@ -76,5 +72,15 @@ function removeDiv() {
   }
 }
 
+function done() {
+  let listBulletItems = document.querySelectorAll(".list-bullet");
+  for (let key of listBulletItems) {
+    key.addEventListener("click", cross);
+
+    function cross() {
+      key.classList.toggle('done');
+    }
+  }
+}
 
 
