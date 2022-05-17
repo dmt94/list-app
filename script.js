@@ -1,9 +1,9 @@
-let button = document.getElementById("enter");
-let input = document.getElementById("userinput");
-let lists = document.querySelectorAll("li");
-let ul = document.querySelector("ul");
+// let button = document.getElementById("enter");
+// let input = document.getElementById("userinput");
+// let lists = document.querySelectorAll("li");
+// let ul = document.querySelector("ul");
 
-console.log(ul.children);
+// console.log(ul.children);
 
 // function inputLength() {
 //   return input.value.length;
@@ -51,20 +51,63 @@ console.log(ul.children);
 
 //second version
 
+let button = document.getElementById("enter");
+let input = document.getElementById("userinput");
+let lists = document.querySelectorAll("li");
+let ul = document.querySelector("ul");
+
+// div - list item
 let listItemDiv = document.querySelectorAll(".list-item");
-let listItemDivEntries = Object.entries(listItemDiv);
+let listItemDivLength = document.querySelectorAll('.list-item').length;
 
-console.log(listItemDiv);
+// list inside div
+let grabList = document.querySelectorAll(".list-bullet");
+let listLength = grabList.length;
+let lastListItem = grabList[listLength - 1];
 
-for (let key of listItemDiv) {
-  let listItem = key.children[0].innerText;
-  // let buttonItem = 
- 
-  console.log(key.children[0].innerText);
-  console.log(key.children[1]);
-  console.log(key.children);
 
+function listCheck() {
+  for (let key of listItemDiv) {
+    let listItem = key.children[0].innerHTML;
+
+
+    if (input.value.toLowerCase() === listItem.toLowerCase() || 
+    input.value.toLowerCase() === lastListItem.innerHTML.toLowerCase() ||
+    input.value.length < 1) {
+      return false;
+    }
+  }
+  return true;
 }
 
-// console.log(Object.entries(listItemDiv));
-// console.log(Array.isArray(listItemDiv));
+let createListDiv;
+function addDivAfterClick() {
+  createListDiv = document.createElement('div');
+  createListDiv.classList.add('list-item');
+  addListAfterClick();
+  addButtonAfterClick();
+  ul.appendChild(createListDiv);
+}
+
+function addListAfterClick() {
+  let createListItem = document.createElement('li');
+  createListItem.appendChild(document.createTextNode(input.value));
+  createListItem.classList.add('list-bullet');
+  input.value = "";
+  createListDiv.appendChild(createListItem);
+}
+
+function addButtonAfterClick() {
+  let createButton = document.createElement('button');
+  createButton.appendChild(document.createTextNode('X'));
+  createButton.classList.add('remove');
+  createListDiv.appendChild(createButton);
+}
+
+function noRepeat() {
+  if (listCheck() === true) {
+    return addDivAfterClick();
+  }
+}
+
+button.addEventListener("click", noRepeat);
