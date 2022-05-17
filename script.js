@@ -87,3 +87,21 @@ function done() {
     }
   }
 }
+
+// dark mode // 
+
+let switchBtn = document.getElementById("switch-btn");
+switchBtn.addEventListener("click", switchStyles);
+
+let counter = 0;
+function switchStyles() {
+  let theme = document.getElementById("light");
+  counter += 1;
+  if (counter % 2 !== 0) {
+    theme.setAttribute('href', '/css/dark.css');
+  } else if (counter % 2 === 0) {
+    theme.setAttribute('href', '/css/style.css');
+    console.log('light theme works');
+  }
+
+}
