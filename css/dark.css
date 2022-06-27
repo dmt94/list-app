@@ -270,9 +270,31 @@ input:checked + .slider:before {
 footer {
   background: none;
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 footer > span#first {
-  color:#454ab2;
+  color:#bfbcbc;
   text-decoration: overline;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+footer .footer-font {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 12px;
+  margin-top: 10px;
+  color:rgb(177, 165, 246);
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer-font:hover {
+  color: rgb(202, 237, 3);
+  animation-timing-function: ease-in-out 2s;
 }
