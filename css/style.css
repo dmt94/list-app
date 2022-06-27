@@ -129,6 +129,10 @@ button:hover {
 .remove {
   margin: 20px;
   width: 25px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   background-color: rgb(220, 243, 201);
   color: rgb(98, 95, 95);
